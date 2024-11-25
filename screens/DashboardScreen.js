@@ -1,14 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Importe o ícone
+import { LinearGradient } from 'expo-linear-gradient'; // Importe o LinearGradient
 
-export default function DashboardScreen({ navigation }) {
+export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#DF2F80', '#4467B0']} style={styles.container}>
       <View style={styles.iconContainer}>
         <Icon name="user-circle" size={70} color="#FFF" />
       </View>
-      <Text style={styles.title}>Dashboard</Text>
+      <Text style={styles.title}>Home</Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Informações Acadêmicas')}
@@ -25,15 +26,15 @@ export default function DashboardScreen({ navigation }) {
         style={styles.button}
         onPress={() => navigation.navigate('Comunicações')}
       >
-        <Text style={styles.buttonText}>Comunicações</Text>
+        <Text style={styles.buttonText}>Comunicados</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Visões Estáticas')}
       >
-        <Text style={styles.buttonText}>Visões Estáticas</Text>
+        <Text style={styles.buttonText}>Financeiro</Text>
       </TouchableOpacity>
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#4467B0',
   },
   iconContainer: {
     marginBottom: 20, // Espaçamento entre o ícone e o título

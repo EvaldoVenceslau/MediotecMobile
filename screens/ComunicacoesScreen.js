@@ -1,19 +1,24 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient'; // Importe o LinearGradient
 
 export default function ComunicacoesScreen() {
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#DF2F80', '#4467B0']} style={styles.container}>
       <Text style={styles.title}>Comunicados</Text>
       <TouchableOpacity style={styles.card}>
-        <Text style={styles.cardTitle}>Comunicado 1</Text>
-        <Text style={styles.cardContent}>Aula suspensa</Text>
+        <Text style={styles.cardTitle}>Aula Remota</Text>
+        <Text style={styles.cardContent}>Devido as fortes chuvas, as aulas do dia 07/11 serão remotas!</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.card}>
-        <Text style={styles.cardTitle}>Comunicado 2</Text>
-        <Text style={styles.cardContent}>Apresentação adiada</Text>
+        <Text style={styles.cardTitle}>Entrega de atividades</Text>
+        <Text style={styles.cardContent}>Ultimos dias para entregar as atividades.</Text>
       </TouchableOpacity>
-    </View>
+      <TouchableOpacity style={styles.card}>
+        <Text style={styles.cardTitle}>Feriado</Text>
+        <Text style={styles.cardContent}>Devido ao feriado do dia 20/11 não teremos aula. </Text>
+      </TouchableOpacity>
+    </LinearGradient>
   );
 }
 
@@ -21,13 +26,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#4467B0',
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#fff',
+    textAlign: 'center',
   },
   card: {
     backgroundColor: '#fff',
