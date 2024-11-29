@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; // Importe o LinearGradient
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function ConceitosScreen() {
   return (
@@ -28,7 +28,7 @@ export default function ConceitosScreen() {
           <Text style={styles.cardContent}>Situação Acadêmica: Aprovado</Text>
         </View>
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>Disciplina: Design de Interface</Text>
+          <Text style={styles.cardTitle}>Design de Interface</Text>
           <Text style={styles.cardContent}>Nota: Excelente</Text>
           <Text style={styles.cardContent}>Situação Acadêmica: Aprovado</Text>
         </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   scrollContainer: {
-    flexGrow: 1, // Permite que o ScrollView se expanda para preencher a tela
+    flexGrow: 1,
   },
   title: {
     fontSize: 24,

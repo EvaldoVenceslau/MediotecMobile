@@ -1,38 +1,69 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Importe o ícone
-import { LinearGradient } from 'expo-linear-gradient'; // Importe o LinearGradient
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen({ navigation }) {
   return (
     <LinearGradient colors={['#DF2F80', '#4467B0']} style={styles.container}>
+      
+      <Image
+        source={require('../img/mtlogo.png')}
+        style={styles.logo}
+      />
+
       <View style={styles.iconContainer}>
         <Icon name="user-circle" size={70} color="#FFF" />
       </View>
-      <Text style={styles.title}>Home</Text>
+      <Text style={styles.title}>Olá, João</Text>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Informações Acadêmicas')}
       >
         <Text style={styles.buttonText}>Informações Acadêmicas</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Conceitos')}
       >
         <Text style={styles.buttonText}>Conceitos</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Comunicações')}
       >
         <Text style={styles.buttonText}>Comunicados</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Visões Estáticas')}
       >
         <Text style={styles.buttonText}>Financeiro</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Contato')}
+      >
+        <Text style={styles.buttonText}>Contato</Text>
+      </TouchableOpacity>
+
+      {/* Ícone e texto "Sair" */}
+      <TouchableOpacity
+        onPress={() => {
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Login' }],
+          });
+        }}
+        style={styles.logoutContainer}
+      >
+        <Icon name="sign-out" size={20} color="#FFF" />
+        <Text style={styles.logoutText}> Sair</Text>
       </TouchableOpacity>
     </LinearGradient>
   );
@@ -45,11 +76,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  logo: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    width: 80,
+    height: 40,
+    resizeMode: 'contain',
+  },
   iconContainer: {
-    marginBottom: 20, // Espaçamento entre o ícone e o título
+    marginBottom: 20,
   },
   title: {
-    fontSize: 40,
+    fontSize: 25,
     fontWeight: 'bold',
     color: '#fff',
     marginBottom: 30,
@@ -71,6 +110,17 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#4467B0',
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  logoutContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  logoutText: {
+    color: '#FFF',
+    fontSize: 16,
+    marginLeft: 5,
     fontWeight: 'bold',
   },
 });

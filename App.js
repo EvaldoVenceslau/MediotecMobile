@@ -7,6 +7,7 @@ import InformacoesAcademicasScreen from './screens/InformacoesAcademicasScreen';
 import ConceitosScreen from './screens/ConceitosScreen';
 import ComunicacoesScreen from './screens/ComunicacoesScreen';
 import VisoesEstaticasScreen from './screens/VisoesEstaticasScreen';
+import ContatoScreen from './screens/ContatoScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name="Conceitos" component={ConceitosScreen} />
         <Stack.Screen name="Comunicações" component={ComunicacoesScreen} />
         <Stack.Screen name="Visões Estáticas" component={VisoesEstaticasScreen} />
+        <Stack.Screen name="Contato" component={ContatoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'; // Importe o LinearGradient
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function InformacoesAcademicasScreen() {
   const downloadPDF = (fileType) => {
-    // Função para simular o download do PDF
+  
     alert(`Download do PDF: ${fileType}`);
   };
 
@@ -21,32 +21,23 @@ export default function InformacoesAcademicasScreen() {
             <Text style={styles.item}><Text style={styles.label}>Turma:</Text> ADS030</Text>
             <Text style={styles.item}><Text style={styles.label}>Turno:</Text> Noite</Text>
             <Text style={styles.item}><Text style={styles.label}>Número de Matrícula:</Text> 12345678</Text>
-            <Text style={styles.item}><Text style={styles.label}>Disciplinas Cursando:</Text> Mobile, Backend, Frontend</Text>
+            <Text style={styles.item}>
+              <Text style={styles.label}>Disciplinas Cursando:</Text> Banco de Dados, Backend, Design de Interface, Frontend, Mobile.
+            </Text>
           </View>
 
           {/* Card 2: Horários das Disciplinas */}
           <View style={styles.card}>
             <Text style={styles.sectionTitle}>Horários das Disciplinas</Text>
-            <Text style={styles.item}><Text style={styles.label}>Mobile:</Text> Segunda a Sexta, das 18h às 20h</Text>
-            <Text style={styles.item}><Text style={styles.label}>Backend:</Text> Terça e Quinta, das 19h às 21h</Text>
-            <Text style={styles.item}><Text style={styles.label}>Frontend:</Text> Quarta e Sexta, das 17h às 19h</Text>
+            <Text style={styles.item}><Text style={styles.label}>Mobile:</Text> Segunda e Quarta, das 18h às 20h</Text>
+            <Text style={styles.item}><Text style={styles.label}>Backend:</Text> Terça e Quinta, das 18h às 20h</Text>
+            <Text style={styles.item}><Text style={styles.label}>Frontend:</Text> Sexta, das 18h às 22h</Text>
+            <Text style={styles.item}><Text style={styles.label}>Banco de Dados:</Text> Segunda e Quarta, das 20h às 22h</Text>
+            <Text style={styles.item}><Text style={styles.label}>Design de Interface:</Text> Terça e Quinta, das 20h às 22h</Text>
             
             {/* Botão para download do PDF de Horários */}
             <TouchableOpacity style={styles.button} onPress={() => downloadPDF('Horários das Disciplinas')}>
               <Text style={styles.buttonText}>Horário</Text>
-            </TouchableOpacity>
-          </View>
-
-          {/* Card 3: Histórico do Aluno */}
-          <View style={styles.card}>
-            <Text style={styles.sectionTitle}>Histórico do Aluno</Text>
-            <Text style={styles.item}><Text style={styles.label}>Nota em Mobile:</Text> Excelente</Text>
-            <Text style={styles.item}><Text style={styles.label}>Nota em Backend:</Text> Bom</Text>
-            <Text style={styles.item}><Text style={styles.label}>Nota em Frontend:</Text> Ótimo</Text>
-            
-            {/* Botão para download do PDF de Histórico */}
-            <TouchableOpacity style={styles.button} onPress={() => downloadPDF('Histórico do Aluno')}>
-              <Text style={styles.buttonText}>Histórico</Text>
             </TouchableOpacity>
           </View>
 
@@ -106,7 +97,6 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     elevation: 4,
   },
-  
   button: {
     backgroundColor: '#DF2F80',
     paddingVertical: 12,
@@ -114,14 +104,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginVertical: 10,
     width: '80%',
-    alignSelf: 'center', // Centraliza o botão horizontalmente no card
+    alignSelf: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 3,
   },
-  
   buttonText: {
     color: '#fff',
     fontSize: 16,
